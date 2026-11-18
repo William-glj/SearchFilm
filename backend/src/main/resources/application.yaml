@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: backend
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/checkticket
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+
+  # Configura aquí un SMTP real para habilitar el envío de correos (spring-boot-starter-mail):
+  # mail:
+  #   host: smtp.gmail.com
+  #   port: 587
+  #   username: tu-correo@gmail.com
+  #   password: tu-app-password
+  #   properties:
+  #     mail.smtp.auth: true
+  #     mail.smtp.starttls.enable: true
+
+app:
+  jwt:
+    secret: "checkticket-dev-jwt-secret-2026-change-me-in-production-0123456789abcdef"
+    expiration: 86400000
+  admin:
+    email: admin@checkticket.com
+    password: admin123
+    fullName: Administrator
+  alerts:
+    delay-ms: 300000
+    initial-delay-ms: 30000
+  telegram:
+    bot-token: ""
